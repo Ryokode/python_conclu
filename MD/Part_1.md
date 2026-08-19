@@ -167,34 +167,34 @@ print(lst);
 	</tr>
 	<tr>
 		<td rowspan="3" style="text-align: center; vertical-align: middle">remove()</td>
-		<td style="text-align: center; vertical-align: middle">一次删除一个元素</td>
+		<td>一次删除一个元素</td>
 	</tr>
 	<tr>
-	    <td style="text-align: center; vertical-align: middle">重复元素只能删除一个</td>
+	    <td>重复元素只能删除一个</td>
 	</tr>
 	<tr>
-		<td style="text-align: center; vertical-align: middle">元素不存在则抛出ValueError</td>
+		<td>元素不存在则抛出ValueError</td>
 	</tr>
 	<tr>
 		<td rowspan="3" style="text-align: center; vertical-align: middle">pop()</td>
-		<td style="text-align: center; vertical-align: middle">删除一个指定索引位置上的元素</td>
+		<td>删除一个指定索引位置上的元素</td>
 	</tr>
 	<tr>
-	    <td style="text-align: center; vertical-align: middle">指定索引不存在则抛出IndexError</td>
+	    <td>指定索引不存在则抛出IndexError</td>
 	</tr>
 	<tr>
-		<td style="text-align: center; vertical-align: middle">不指定索引，删除列表中最后一个元素</td>
+		<td>不指定索引，删除列表中最后一个元素</td>
 	</tr>
 	<tr>
 		<td style="text-align: center; vertical-align: middle">切片</td>
-		<td style="text-align: center; vertical-align: middle">一次至少删除一个元素</td>
+		<td>一次至少删除一个元素</td>
 	</tr>
 	<tr>
 		<td style="text-align: center; vertical-align: middle">clear()</td>
-		<td style="text-align: center; vertical-align: middle">清空列表</td>
+		<td>清空列表</td>
 	</tr>
 	<tr>
 		<td style="text-align: center; vertical-align: middle">del</td>
-		<td style="text-align: center; vertical-align: middle">删除列表</td>
+		<td>删除列表</td>
 	</tr>
 </table>
