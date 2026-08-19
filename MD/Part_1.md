@@ -30,3 +30,6 @@
 	  else:
 		    print('对不起，三次密码均错误')
 ```
+
+### 二重循环中的break和continue
+- 二重循环中的break和continue用于控制本层循环
