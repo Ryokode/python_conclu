@@ -262,11 +262,26 @@ print(lst);
 
 e.g:
 ```python
+#使用sort()方法
 lst = [20,40,10,98,54];
 print('排序前的列表',lst,id(lst));
 lst.sort();
 print('排序后的列表',lst,id(lst));
 #排序后升序排序，列表id相同，说明sort()方法是在原列表的基础上进行的
+lst.sort(reverse=True);
+print(lst);
+lst.sort(reverse=False);
+print(lst);
+#reverse=True表示降序排序，reverse=False表示升序排序
 
-
+#使用内置函数sorted()，生成一个新列表，原列表不变
+new_list = sorted(lst);
+print(lst);
+#结果为：[20,40,10,98,54]
+print(new_list);
+#结果为：[10,20,40,54,98]
+#同样reverse
+desc_list = sorted(lst,reverse=True);
+print(desc_list);
+#结果为：[98,54,40,20,10]
 ```
