@@ -33,3 +33,6 @@
 
 ### 二重循环中的break和continue
 - 二重循环中的break和continue用于控制本层循环
+
+### 列表
+<div align="center"><img src= "https://raw.githubusercontent.com/Ryokode/PicGo/main/20260819170618593.png" alt=""></div>
