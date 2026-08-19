@@ -52,3 +52,10 @@
 - 列表可以存储重复数据
 - 任意数据类型混存
 - 根据需要动态分配和回收内存
+
+### 列表的查询操作
+#### 获取列表中指定元素的索引
+<div align="center"><img src= "https://raw.githubusercontent.com/Ryokode/PicGo/main/20260819173430644.png" alt=""></div>
+### 获取列表中的单个元素
+<div align="center"><img src= "https://raw.githubusercontent.com/Ryokode/PicGo/main/20260819173704322.png
+" alt=""></div>
