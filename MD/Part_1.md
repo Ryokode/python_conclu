@@ -119,7 +119,7 @@ for item in lst:
 	print(item);
 ```
 
-### 列表元素的增加操作
+### 列表元素的增删改排操作
 #### 列表元素的增加操作
 |  方法/其他   |       操作描述       |
 | :------: | :--------------: |
@@ -157,3 +157,44 @@ lst[1:] = lst3;
 print(lst);
 #结果显示：[10,True,False,'hi']
 ```
+
+#### 列表元素的删除操作
+
+<table style="width:100%;text-align: center;vertical-align: middle">
+	<tr>
+		<th style="text-align: center; vertical-align: middle">方法/其他</th>
+		<th style="text-align: center; vertical-align: middle">操作描述</th>
+	</tr>
+	<tr>
+		<td rowspan="3" style="text-align: center; vertical-align: middle">remove()</td>
+		<td style="text-align: center; vertical-align: middle">一次删除一个元素</td>
+	</tr>
+	<tr>
+	    <td style="text-align: center; vertical-align: middle">重复元素只能删除一个</td>
+	</tr>
+	<tr>
+		<td style="text-align: center; vertical-align: middle">元素不存在则抛出ValueError</td>
+	</tr>
+	<tr>
+		<td rowspan="3" style="text-align: center; vertical-align: middle">pop()</td>
+		<td style="text-align: center; vertical-align: middle">删除一个指定索引位置上的元素</td>
+	</tr>
+	<tr>
+	    <td style="text-align: center; vertical-align: middle">指定索引不存在则抛出IndexError</td>
+	</tr>
+	<tr>
+		<td style="text-align: center; vertical-align: middle">不指定索引，删除列表中最后一个元素</td>
+	</tr>
+	<tr>
+		<td style="text-align: center; vertical-align: middle">切片</td>
+		<td style="text-align: center; vertical-align: middle">一次至少删除一个元素</td>
+	</tr>
+	<tr>
+		<td style="text-align: center; vertical-align: middle">clear()</td>
+		<td style="text-align: center; vertical-align: middle">清空列表</td>
+	</tr>
+	<tr>
+		<td style="text-align: center; vertical-align: middle">del</td>
+		<td style="text-align: center; vertical-align: middle">删除列表</td>
+	</tr>
+</table>
