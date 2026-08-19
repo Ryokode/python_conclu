@@ -64,3 +64,27 @@
 <div align="center"><img src= "https://raw.githubusercontent.com/Ryokode/PicGo/main/20260819180100372.png" alt=""></div>
 
 - 切片范围左闭右开$[start,stop)$不包括stop本身
+- e.g:
+```python
+  lst = [10,20,30,40,50,60,70,80];
+  print('原列表',lst);
+  print('原列表',id(lst));
+  lst2 = lst[1:6:1];
+  print('切的片段：',lst2);
+  print('切的片段：',id(lst2));
+  
+  print(lst[1:6:]);
+  #默认步长为1
+  print(lst[:6:2]);
+  #start默认为0
+  print(lst[1::2]);
+  #stop默认截到最后一个元素
+  
+  #step为负数时，将列表逆序输出
+  print(lst[::-1]);
+  print(lst[7::-1]);
+  #结果相同，均为[80,70,60,50,40,30,20,10]
+  
+  print(lst[6:0:-2]);
+  #结果为[70,50,30]，不包括stop=0
+```
