@@ -198,6 +198,7 @@ print(lst);
 		<td>删除列表</td>
 	</tr>
 </table>
+
 e.g:
 ```python
 #remove()
