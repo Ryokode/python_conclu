@@ -223,4 +223,14 @@ print(new_list);
 lst[1:3] = [];#不产生新列表对象，而是删除原列表内容，即用空列表替代切片内容
 print(lst);
 #结果显示：[10,60]
+
+#clear()
+lst.clear();
+print(lst);
+#结果显示：[]
+
+#del
+lst.del;
+print(lst);
+#结果显示：NameError:name 'lst' is not defined
 ```
