@@ -94,3 +94,15 @@
 	- 元素 not in 列表名
 - 列表元素的遍历
 	- for 迭代变量 in 列表名 :
+
+e.g:
+```python
+lst = [10,20,'python','hello'];
+print(10 in lst);#True
+print(100 in lst);#False
+print(10 not in lst);#False
+print(100 not in lst);#True
+
+for item in lst:
+	print(item);
+```
