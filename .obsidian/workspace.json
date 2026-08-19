@@ -11,10 +11,14 @@
             "id": "a66d27d53e27e662",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "MD/Part_1.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "Part_1"
             }
           }
         ]
@@ -90,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "MD/Part_1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "反向链接"
+              "title": "Part_1 的反向链接列表"
             }
           },
           {
@@ -108,11 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "MD/Part_1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "出链"
+              "title": "Part_1 的出链列表"
             }
           },
           {
@@ -158,12 +164,12 @@
               "title": "大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -177,11 +183,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a66d27d53e27e662",
+  "active": "e801c11a9711fe6f",
   "lastOpenFiles": [
-    "MD/未命名.md",
+    "MD/Part_1.md",
+    "MD",
+    "MD/Part_1.md",
+    "MD",
     "未命名.md",
-    "Code",
-    "MD"
+    "Code"
   ]
 }
