@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "e90e43d583eae19d",
+        "id": "0934a23f59e616b9",
         "type": "tabs",
         "children": [
           {
-            "id": "a66d27d53e27e662",
+            "id": "0aebec908dcdd153",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -194,11 +194,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "eafaa4431327359b",
+  "active": "0aebec908dcdd153",
   "lastOpenFiles": [
+    "().md",
     "MD/Part_1.md",
     "MD",
-    "MD/Part_1.md",
     "MD",
     "未命名.md",
     "Code"
