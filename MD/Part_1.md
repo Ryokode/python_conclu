@@ -285,3 +285,33 @@ desc_list = sorted(lst,reverse=True);
 print(desc_list);
 #结果为：[98,54,40,20,10]
 ```
+
+### 列表生成式
+- 列表生成式简称“生成列表的公式“
+	- 语法格式：
+	 ![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260819225546262.png)
+	- 注意事项：”表示列表元素的表达式“中通常包含自定义变量
+
+e.g:
+```python
+lst = [i for i in range(1,10)];
+print(lst);
+#结果为：[1,2,3,4,5,6,7,8,9]
+
+lst = [i*i for i in range(1,10)];
+print(lst);
+#结果为：[1,4,9,16,25,36,49,64,81]
+
+#生成一个元素值为2、4、6、8、10的列表
+lst2 = [i*2 for i in range(1,6)]
+#结果为：[2,4,6,8,10]
+```
+
+---
+
+## 字典
+### 字典
+- Python内置的数据结构之一，与列表一样是一个可变序列
+- 以键值对的方式存储数据，字典是一个**无序**的序列
+<div align="center"><img src= "https://raw.githubusercontent.com/Ryokode/PicGo/main/20260819230643374.png" alt=""></div>
+
