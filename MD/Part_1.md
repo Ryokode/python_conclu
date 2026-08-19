@@ -57,10 +57,10 @@
 #### 获取列表中指定元素的索引
 <div align="center"><img src= "https://raw.githubusercontent.com/Ryokode/PicGo/main/20260819173430644.png" alt=""></div>
 
-### 获取列表中的单个元素
+#### 获取列表中的单个元素
 <div align="center"><img src= "https://raw.githubusercontent.com/Ryokode/PicGo/main/20260819173704322.png" alt=""></div>
 
-### 获取列表中的多个元素
+#### 获取列表中的多个元素
 <div align="center"><img src= "https://raw.githubusercontent.com/Ryokode/PicGo/main/20260819180100372.png" alt=""></div>
 
 - 切片范围左闭右开$[start,stop)$不包括stop本身
@@ -88,3 +88,9 @@
   print(lst[6:0:-2]);
   #结果为[70,50,30]，不包括stop=0
 ```
+#### 判断指定元素在列表中是否存在
+- 使用in或not in来判断
+	- 元素 in 列表名
+	- 元素 not in 列表名
+- 列表元素的遍历
+	- for 迭代变量 in 列表名 :
