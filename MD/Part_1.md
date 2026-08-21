@@ -640,3 +640,65 @@ s3 = {i*2 for i in range(1,6)}
 #### 什么叫字符串的驻留机制
 - 仅保存一份相同且不可变字符串的方法，不同的值被存放在字符串的驻留池中，Python的驻留机制对相同的字符串只保留一份拷贝，后续创建相同字符串时，不会开辟新空间，而是把该字符串的地址赋给新创建的变量
 - ![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260821151228432.png)
+```python
+a = 'Python';
+b = "Python";
+c = '''Python''';
+print(a,id(a));
+print(b,id(b));
+print(c,id(c));
+#结果显示三个字符串的内存地址都是相同的
+```
+![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260821151853565.png)
+#### 字符串的驻留机制
+##### 驻留机制的几种情况（交互模式）
+- 字符串的长度为0或1时
+- 符合标识符的字符串
+- 字符串只在编译时进行驻留，而非运行时
+- \[-5,256\]之间的整数数字
+```python
+s1 = 'a';
+s2 = 'a';
+s1 is s2;#True
+
+s1 = '%';
+s2 = '%';
+s1 is s2;#True，字符串长度为1，但%不属于符合标识符的字符串_属于
+
+s1 = 'a%';
+s2 = 'a%';
+s1 == s2;#True
+s1 is s2;#False，因为%不属于符合标识符的字符串，id不同
+
+a = 'abc';
+b = 'ab' + 'c';
+c = ''.join(['ab','c']);
+a is b;#True
+a is c;#False，因为b是在运行前就编译好的，而c是需要在运行时调用jion()方法去合并的，字符串只在编译时进行驻留，而非运行时
+
+a = -5;
+b = -5;
+a is b;#True
+
+a = -6;
+b = -6;
+a is b;#False
+```
+##### sys中的intern方法强制2个字符串指向同一个对象
+```python
+import sys
+
+a = 'a%';
+b = 'a%';
+a is b;#False
+
+a = sys.intern(b);
+a is b;#True
+```
+##### PyCharm对字符串进行了优化处理
+#### 字符串驻留机制的优缺点
+- 当需要值相同的字符串时，可以直接从字符串池里拿来使用，避免频繁的创建和销毁，提升效率和节约内存，因此拼接字符串和修改字符串是会比较影响性能的
+- 在需要进行字符串拼接时建议使用str类型的join方法，而非+，因为join()方法是先计算出所有字符串的长度，然后再拷贝，只new一次对象，效率比+高
+
+### 字符串的常用操作
+
