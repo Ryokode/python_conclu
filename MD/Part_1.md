@@ -379,6 +379,7 @@ scores['Jack'] = 100;    #修改元素
 | keys()   | 获取字典中所有key            |
 | values() | 获取字典中所有value          |
 | items()  | 获取字典中所有键值对（key和value） |
+
 e.g:
 ```python
 scores = {'张三':100,'李四':98,'王五':67};
