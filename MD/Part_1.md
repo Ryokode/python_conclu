@@ -332,10 +332,10 @@ print(d);
 ### 字典的常用操作
 #### 字典中元素的获取
 ![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260821121137715.png)
-##### []取值与使用get()取值的区别
-- []如果字典中不存在指定的key，抛出KeyError异常
+##### \[]取值与使用get()取值的区别
+- \[]如果字典中不存在指定的key，抛出KeyError异常
 - get()方法取值，如果字典中不存在指定的key，并不会抛出KeyError而是返回None，可以通过参数设置默认的value，以便指定的key不存在时
-##### 使用[]
+##### 使用\[]
 ```python
 scores = {'张三':100,'李四':98,'王五':67};
 print(scores['张三']);
@@ -558,9 +558,57 @@ print(type(s7));
  - in或not in
 #### 集合元素的新增操作
 - 调用add()方法，一次添加一个元素
-- 调用update()方法，一次至少添加一个元素
+- 调用update()方法，一次至少添加一个元素，update中还可以添加列表、元组等
 #### 集合元素的删除操作
  - 调用remove()方法，一次删除一个指定元素，如果指定的元素不存在抛出KeyError
  - 调用discard()方法，一次删除一个指定元素，如果指定的元素不存在不抛出异常
- - 调用pop()方法，一次只删除一个任意元素
+ - 调用pop()方法，一次只删除一个任意元素，pop()方法不能指定参数，只能写无参的，一般都是删除最左侧第一个元素
  - 调用clear()方法，清空集合
+
+### 集合间的关系
+![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260821144736846.png)
+
+#### 两个集合是否相等
+- 使用运算符\==或!=进行判断
+```python
+s = {10,20,30,40};
+s2 = {20,30,10,40};
+print(s == s2);#True
+print(s != s2);#False
+#集合是无序的，只要元素内容相同即相等
+```
+#### 一个集合是否是另一个集合的子集
+- 可以使用调用方法issubset()进行判断
+- B是A的子集
+#### 一个集合是否是另一个集合的超集
+- 可以使用调用方法issuperset()进行判断
+- A是B的超集
+#### 两个集合是否没有交集
+- 可以使用调用方法isdisjoint()进行判断，没有交集为True
+
+### 集合的数据操作
+#### 集合的数学操作
+![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260821145008364.png)
+```python
+#交集
+s1 = {10,20,30,40};
+s2 = {20,30,40,50,60};
+print(s1.intersection(s2));
+print(s1 & s2);#intersection()与&等价
+#结果为：{40,20,30}
+
+#并集
+print(s1.union(s2));
+print(s1 | s2);#union()与|等价
+#结果为：{40,10,50,20,60,30}
+
+#差集
+print(s1.difference(s2));
+print(s1 - s2);#difference()与-等价
+#结果为：{10}
+
+#对称差集
+print(s1.symmetric_difference(s2));
+print(s1 ~ s2);#symmetric_difference()与~等价
+#结果为：{10,50,60}
+```
