@@ -888,5 +888,23 @@ print(b is c);#True
 ##### 字符串是不可变类型
 - 不具备增删改等操作
 - 切片操作将产生新的对象
+- 切片[start:end:step]不包含end本身
 
 ![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260821183218598.png)
+```python
+s = 'hello,python';
+print(s[1:5:1]);#从1开始截到5（不包含5），步长为1
+#结果为：ello
+print(s[::2]);#默认从0开始，没有写结束，默认到字符串的最后一个元素，步长为2，两个元素之间的索引间隔为2
+#结果为：hlopto
+print(s[::-1]);#默认从字符串的最后一个元素开始，到字符串的第一个元素结束，因为步长为负数
+#结果为：nohtyp,olleh
+print(s[-6::1]);
+#结果为：python
+```
+
+### 格式化字符串
+#### 格式化字符串的两种方式
+- %作占位符
+- {}作占位符
+![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260821185117394.png)
