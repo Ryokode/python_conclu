@@ -839,3 +839,53 @@ print(s1.split(sep='|',maxsplit=1));
 | --------- | --------------------------------------------------------------------------------- |
 | replace() | 第一个参数指定被替换的子串，第二个参数指定替换字串的字符串，该方法返回替换后得到的字符串，替换前的字符串不发生变化，调用该方法时可以通过第三个参数指定最大替换次数 |
 | join()    | 将列表或元组中的字符串合并成一个字符串                                                               |
+```python
+s = 'hello,python';
+print(s.replace('python','java'));
+#结果为：hello,java
+
+s1 = 'hello,python,python,python';
+print(s1.replace('python','java',2));
+#结果为：hello,java,java,python
+
+lst = ['hello','java','python'];
+print('|',join(lst));#|是设置的连接时的连接符
+#结果为：hello|java|python
+t = ('hello','java','python');
+print('|',join(t));#|是设置的连接时的连接符
+#结果为：hello|java|python
+
+print('*',join('Python'));#将字符串作为字符串序列以*进行连接
+#结果为：P*y*t*h*o*n
+```
+
+#### 字符串的比较操作
+- **运算符**：>,>=,<,<=,\==,!=
+- **比较规则**：首先比较两个字符串中的第一个字符，如果相等则继续比较下一个字符，依次比较下去，直到两个字符串中的所有后续字符将不再被比较
+- **比较原理**：两个字符进行比较时，比较的是其ordinal value（原始值），调用内置函数ord可以得到指定字符的ordinal value。与内置函数ord对应的是内置函数chr，调用内置函数chr时指定ordinal value可以得到其对应的字符
+```python
+print('apple' > 'app')#True
+print('apple' > 'banana')#False
+print(ord('a'),ord('b'));
+#结果为：97,98
+#字符对应的原始值是Unicode码值，Unicode前128项就是ASCII码值
+print(chr(97),chr(98));
+#结果为：a,b
+```
+- **\==与is的区别**
+	- \==比较的是value是否相等
+	- is比较的是id是否相等
+```python
+a = b = 'python';
+c = 'python';
+print(a == b);#True
+print(b == c);#True
+print(a is b);#True
+print(b is c);#True
+#a,b,c的id相同
+```
+#### 字符串的切片操作
+##### 字符串是不可变类型
+- 不具备增删改等操作
+- 切片操作将产生新的对象
+![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260821183218598.png)
