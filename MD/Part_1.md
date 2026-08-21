@@ -609,6 +609,6 @@ print(s1 - s2);#difference()与-等价
 
 #对称差集
 print(s1.symmetric_difference(s2));
-print(s1 ~ s2);#symmetric_difference()与~等价
+print(s1 ^ s2);#symmetric_difference()与^等价
 #结果为：{10,50,60}
 ```
