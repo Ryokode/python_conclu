@@ -709,6 +709,7 @@ a is b;#True
 | rindex() | 查找子串substr最后一次出现的位置，如果查找的子串不存在时，则抛出ValueError |
 | find()   | 查找子串substr第一次出现的位置，如果查找的子串不存在时，则返回-1          |
 | rfind()  | 查找子串substr最后一次出现的位置，如果查找的子串不存在时，则返回-1         |
+
 ```python
 s = 'hello,hello';
 print(s.index('lo'));#返回的是第一个'lo'中l的位置3
@@ -726,4 +727,21 @@ print(s.rindex('k'));
 #ValueError:substring not found
 print(s.rfind('k'));
 #-1
+```
+#### 字符串的大小写转换
+
+| 方法           | 作用                                 |
+| ------------ | ---------------------------------- |
+| upper()      | 把字符串中的所有字符都转成大写字母                  |
+| lower()      | 把字符串中的所有字符都转成小写字母                  |
+| swapcase()   | 把字符串中的所有大写字母转成小写字母，以及所有小写字母都转成大写字母 |
+| capitalize() | 把第一个字符转换为大写，把其余字符转换为小写             |
+| title()      | 把每个单词的第一个字符转换为大写，每个单词的剩余字符转换为小写    |
+
+```python
+s = 'hello,python';
+a = s.upper();
+print(s,id(s));
+print(a,id(a));
+#upper()会生成一个新的字符串对象给a，原来的s不变，a和s的内存地址不同
 ```
