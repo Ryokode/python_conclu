@@ -355,15 +355,58 @@ print(scores.get('麻七',99));#99是在查找'麻七'所对应的value不存在
 ```
 #### key的判断
 
-| 判断     | Bool                | 结果                  |
+| 判断     | Bool值               | 结果                  |
 | ------ | ------------------- | ------------------- |
 | in     | 指定的key在字典中存在返回True  | '张三' in scores      |
 | not in | 指定的key在字典中不存在返回True | '张三'  not in scores |
 #### 字典元素的删除
 ```python
-del scores['张三'];
+del scores['张三'];    #删除指定的键值对
+scores.clear();    #清空字典的元素
 ```
 #### 字典元素的新增
 ```python
-scores['Jack'] = 90;
+scores['Jack'] = 90;    #新增元素，增的是一个键值对
+```
+#### 字典元素的修改
+```python
+scores['Jack'] = 100;    #修改元素
+```
+#### 获取字典视图的三个方法
+
+| 方法       | 获取的值                  |
+| -------- | --------------------- |
+| keys()   | 获取字典中所有key            |
+| values() | 获取字典中所有value          |
+| items()  | 获取字典中所有键值对（key和value） |
+e.g:
+```python
+scores = {'张三':100,'李四':98,'王五':67};
+
+#获取所有的key
+keys = scores.keys();
+print(keys);
+#结果显示：dict_keys(['张三','李四','王五'])
+print(type(keys));
+#结果显示：<class 'dict_keys'>
+print(list(keys));    #将所有键组成的视图转成列表
+#结果显示：['张三','李四','王五']
+
+#获取所有的value
+values = scores.values();
+print(values);
+#结果显示：dict_values([100,98,67])
+print(type(values));
+#结果显示：<class 'dict_values'>
+print(list(values));    #将所有值组成的视图转成列表
+#结果显示：[100,98,67]
+
+#获取所有键值对
+items = scores.items();
+print(items);
+#结果显示：dict_items([('张三',100),('李四',98),('王五',67)])
+print(type(items));
+#结果显示：<class 'dict_items'>
+print(list(items));    #将所有键值对组成的视图转成列表，转换之后的列表元素是由元组组成的
+#结果显示：[('张三',100),('李四',98),('王五',67)]
 ```
