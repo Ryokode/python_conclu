@@ -410,3 +410,11 @@ print(type(items));
 print(list(items));    #将所有键值对组成的视图转成列表，转换之后的列表元素是由元组组成的
 #结果显示：[('张三',100),('李四',98),('王五',67)]
 ```
+#### 字典元素的遍历
+e.g:
+```python
+scores = {'张三':100,'李四':98,'王五':67};
+
+for item in scores:    #item获取的是字典中的键，[]或get()方法来获取值
+	print(item,scores[item],scores.get(item))
+```
