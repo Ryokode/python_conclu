@@ -701,4 +701,29 @@ a is b;#True
 - 在需要进行字符串拼接时建议使用str类型的join方法，而非+，因为join()方法是先计算出所有字符串的长度，然后再拷贝，只new一次对象，效率比+高
 
 ### 字符串的常用操作
+#### 字符串的查询操作
 
+| 方法       | 作用                                            |
+| -------- | --------------------------------------------- |
+| index()  | 查找子串substr第一次出现的位置，如果查找的子串不存在时，则抛出ValueError  |
+| rindex() | 查找子串substr最后一次出现的位置，如果查找的子串不存在时，则抛出ValueError |
+| find()   | 查找子串substr第一次出现的位置，如果查找的子串不存在时，则返回-1          |
+| rfind()  | 查找子串substr最后一次出现的位置，如果查找的子串不存在时，则返回-1         |
+```python
+s = 'hello,hello';
+print(s.index('lo'));#返回的是第一个'lo'中l的位置3
+print(s.find('lo'));#返回的是第一个'lo'中l的位置3
+print(s.rindex('lo'));#返回的是最后一个'lo'中l的位置9
+print(s.index('lo'));#返回的是最后一个'lo'中l的位置9
+```
+![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260821164831940.png)
+```python
+print(s.index('k'));
+#ValueError:substring not found
+print(s.find('k'));
+#-1
+print(s.rindex('k'));
+#ValueError:substring not found
+print(s.rfind('k'));
+#-1
+```
