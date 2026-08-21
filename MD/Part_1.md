@@ -888,4 +888,5 @@ print(b is c);#True
 ##### 字符串是不可变类型
 - 不具备增删改等操作
 - 切片操作将产生新的对象
+
 ![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260821183218598.png)
