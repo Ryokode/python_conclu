@@ -308,3 +308,62 @@ lst2 = [i*2 for i in range(1,6)]
 - 以键值对的方式存储数据，字典是一个**无序**的序列
 <div align="center"><img src= "https://raw.githubusercontent.com/Ryokode/PicGo/main/20260819230643374.png" alt=""></div>
 
+### 字典的创建
+#### 使用{}创建字典
+```python
+scores = {'张三':100,'李四':98,'王五':67};
+print(scores);
+#结果显示：{'张三':100,'李四':98,'王五':67}
+print(type(scores));
+#结果显示：<class 'dict'>
+```
+#### 使用内置函数dict()创建
+```python
+student = dict(name = 'jack',age = 20);
+print(student);
+#结果显示：{'name':'jack','age':20}
+```
+#### 空字典
+```python
+d = {};
+print(d);
+#结果显示：{}
+```
+### 字典的常用操作
+#### 字典中元素的获取
+![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260821121137715.png)
+##### []取值与使用get()取值的区别
+- []如果字典中不存在指定的key，抛出KeyError异常
+- get()方法取值，如果字典中不存在指定的key，并不会抛出KeyError而是返回None，可以通过参数设置默认的value，以便指定的key不存在时
+##### 使用[]
+```python
+scores = {'张三':100,'李四':98,'王五':67};
+print(scores['张三']);
+#结果显示：100
+print(scores['陈六']);
+#结果显示：KeyError:'陈六'
+```
+##### 使用get()方法
+```python
+scores = {'张三':100,'李四':98,'王五':67};
+print(scores.get('张三'));
+#结果显示：100
+print(scores.get('陈六'));
+#结果显示：None
+print(scores.get('麻七',99));#99是在查找'麻七'所对应的value不存在时，自定义提供的一个默认值
+#结果显示：99
+```
+#### key的判断
+
+| 判断     | Bool                | 结果                  |
+| ------ | ------------------- | ------------------- |
+| in     | 指定的key在字典中存在返回True  | '张三' in scores      |
+| not in | 指定的key在字典中不存在返回True | '张三'  not in scores |
+#### 字典元素的删除
+```python
+del scores['张三'];
+```
+#### 字典元素的新增
+```python
+scores['Jack'] = 90;
+```
