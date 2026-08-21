@@ -744,4 +744,89 @@ a = s.upper();
 print(s,id(s));
 print(a,id(a));
 #upper()会生成一个新的字符串对象给a，原来的s不变，a和s的内存地址不同
+#剩余的其他方法类似
 ```
+- **注意**：
+	- 即使转换后的字符串和转换前的一样，也是重新开辟了一块内存空间存储的，id也不同
+	- 例如原本是小写的，利用lower()方法后还是会生成一个全小写的新字符串对象
+#### 字符串内容对齐操作
+
+| 方法       | 作用                                                            |
+| -------- | ------------------------------------------------------------- |
+| center() | 居中对齐，第一个参数指定宽度，第二个参数指定填充符，第二个参数是可选的，默认是空格，如果设置宽度小于实际宽度则返回原字符串 |
+| ljust()  | 左对齐，第一个参数指定宽度，第二个参数指定填充符，第二个参数是可选的，默认是空格，如果设置宽度小于实际宽度则返回原字符串  |
+| rjust()  | 右对齐，第一个参数指定宽度，第二个参数指定填充符，第二个参数是可选的，默认是空格，如果设置宽度小于实际宽度则返回原字符串  |
+| zfill()  | 右对齐，左边用0填充，该方法只接收一个参数，用于指定字符串的宽度，如果指定的宽度小于等于字符串的长度，返回字符串本身    |
+```python
+s = 'hello,python';
+print(s.center(20,'*'));
+#结果为：****hello,python****
+#给出的宽度大于字符串内容的宽度，剩余宽度左右用填充符填充
+
+print(s.ljust(10));
+#结果为：hello,python
+#如果设置宽度小于实际宽度则返回原字符串
+
+#rjust()类似
+
+print(s.zfill(20));
+#结果为：00000000hello,python
+#右对齐，左边用0填充，该方法只接收一个参数，用于指定字符串的宽度
+print('-8910'.zfill(8));
+#结果为：-0008910
+#0会添加在负号右边且负号也算一位字符
+```
+#### 字符串的劈分操作
+
+<table style="width:100%;text-align: center;vertical-align: middle">
+	<tr>
+		<th style="text-align: center; vertical-align: middle">方法</th>
+		<th style="text-align: center; vertical-align: middle">作用</th>
+	</tr>
+	<tr>
+		<td rowspan="3" style="text-align: center; vertical-align: middle">split()</td>
+		<td>从字符串的左边开始劈分，默认的劈分字符是空格字符串，返回的值都是一个列表</td>
+	</tr>
+	<tr>
+	    <td>以通过参数sep指定劈分字符串时的劈分符</td>
+	</tr>
+	<tr>
+		<td>通过参数maxsplit指定劈分字符串时的最大劈分次数，在经过最大次劈分后，剩余的子串会单独作为一部份</td>
+	</tr>
+	<tr>
+		<td rowspan="3" style="text-align: center; vertical-align: middle">rsplit()</td>
+		<td>从字符串的右边开始劈分，默认的劈分字符是空格字符串，返回的值都是一个列表</td>
+	</tr>
+	<tr>
+	    <td>以通过参数sep指定劈分字符串时的劈分符</td>
+	</tr>
+	<tr>
+		<td>通过参数maxsplit指定劈分字符串时的最大劈分次数，在经过最大次劈分后，剩余的子串会单独作为一部份</td>
+	</tr>
+</table>
+
+```python
+s = 'hello world python';
+lst = s.split();
+print(lst);
+#结果为：['hello','world','python']
+
+s1 = 'hello|world|python';
+print(s1.split(sep='|'));
+#结果为：['hello','world','python']
+print(s1.split(sep='|',maxsplit=1));
+#结果为：['hello','world|python']
+
+#rsplit()方法类似，只是方向相反
+```
+
+#### 判断字符串的操作
+
+| 方法             | 作用                               |
+| -------------- | -------------------------------- |
+| isidentifier() | 判断指定的字符串是不是合法的标识符                |
+| isspace()      | 判断指定的字符串是否全部有空白字符组成（回车、换行、水平制表符） |
+| isalpha()      | 判断指定的字符串是否全部由字母组成                |
+| isdecimal()    | 判断指定的字符串是否全部由十进制的数字组成            |
+| isnumeric()    | 判断指定的字符串是否全部由数字组成                |
+| isalnum()      | 判断指定的字符串是否全部由字母和数字组成             |
