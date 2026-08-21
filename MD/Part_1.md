@@ -612,3 +612,23 @@ print(s1.symmetric_difference(s2));
 print(s1 ^ s2);#symmetric_difference()与^等价
 #结果为：{10,50,60}
 ```
+
+### 集合生成式
+- 用于生成集合的公式
+![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260821150405797.png)
+- 将{}修改为\[]就是列表生成式
+- 没有元组生成式
+```python
+s = {i for i in range(1,10)};
+print(s);
+#结果为：{1,2,3,4,5,6,7,8,9}
+
+s2 = {i*i for i in range(1,10)};
+print();
+#结果为：{64,4,25,16,9,36,49,1,81}
+#集合是无序的
+
+#生成一个元素值为2、4、6、8、10的集合
+s3 = {i*2 for i in range(1,6)}
+#结果为：{2,4,6,8,10}
+```
