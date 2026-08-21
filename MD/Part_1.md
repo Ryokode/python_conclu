@@ -908,3 +908,60 @@ print(s[-6::1]);
 - %作占位符
 - {}作占位符
 ![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260821185117394.png)
+```python
+#%
+name = '张三';
+age = 20;
+print('我叫%s，今年%d岁' % (name,age));
+
+#{}
+print('我叫{0}，今年{1}岁'.format(name,age));
+
+#f-string
+print(f'我叫{name}，今年{age}岁');
+
+#三种方法结果都是：我叫张三，今年20岁
+```
+#### 格式化字符串的精度与宽度
+```python
+print('%10d' % 99);#10表示的是宽度
+#结果为：        99
+print('%.3f' % 3.1415926);#.3表示保留小数点后三位
+#结果为：3.142
+print('%10.3f' % 3.1415926);#总宽度为10，小数点后三位
+#结果为：     3.142
+
+print('{}'.format(3.1415926));
+print('{0}'.format(3.1415926));
+print('{0:.3}'.format(3.1415926));#.3表示的是一共是3位数字
+##结果为：3.14
+print('{0:.3f}'.format(3.1415926));#.3f表示的是是3位小数
+##结果为：3.142
+print('{:.3f}'.format(3.1415926));#只有一个索引时0可以不写
+##结果为：3.142
+```
+
+### 字符串的编码转换
+#### 为什么需要字符串编码转换
+![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260821190731315.png)
+#### 编码与解码的方式
+- 编码：将字符串转换为二进制数据(bytes)
+- 解码：将bytes类型的数据转换成字符串类型
+```python
+s = '天涯共此时';
+#编码
+print(s.encode(encoding='GBK'));#在GBK这种编码格式中，一个中文占连个字节
+#结果为：b'\xcc\xec\xdl\xc4\xb9\xb2\xb4\xcb\xca\xbl'
+print(s.encode(encoding='UTF-8'));#在GBK这种编码格式中，一个中文占连三字节
+#结果为：b'\xe5\xa4\xa9\xe6\xb6\xaf\xe5\x85\xbl\xe6\xad\xa4\xe6\x97\xb6'
+
+#解码
+#byte代表就是一个二进制数据（字节类型的数据）
+byte = s.encode(encoding='GBK');#编码
+print(byte.decode(encoding='GBK'));#解码
+
+byte = s.encode(encoding='GBK');#编码
+print(byte.decode(encoding='UTF-8'));#解码
+#UnicodeDecodeError:'utf-8' codec can't decode byte 0xcc in position 0: invalod continuation byte
+#编解码的格式都要一样
+```
