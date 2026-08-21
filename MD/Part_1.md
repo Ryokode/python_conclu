@@ -499,3 +499,56 @@ t[1].append(100);
 print(t);
 #结果为：(10,[20,30,100],9)
 ```
+
+### 元组的遍历
+- 元组是可迭代对象，所以可以使用for...in...进行遍历
+```python
+t = tuple(('Python','Hello',90));
+for item in t:
+	print(item);
+```
+
+## 集合
+### 集合
+- Python内置数据结构之一，是一个可变序列
+- **集合是没有value的字典**
+![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260821140911623.png)
+
+### 集合的创建方式
+#### 直接{}
+```python
+s = {'Python','hello',90};    #集合中的元素不允许重复
+```
+#### 使用内置函数set()
+```python
+s1= set(range(6));
+print(s1,type(s1));
+#结果为：{0,1,2,3,4,5} <class 'set'>
+
+s2 = set([1,2,3,3,4,4,5,5,6,6,6]);
+print(s2,type(s2));
+#结果为：{1,2,3,4,5,6} <class 'set'>
+#将列表转化为集合并且去除了重复的元素
+
+s3 = set((1,2,4,4,5,65));    #集合中的元素是无序的
+print(s3,type(s3));
+#结果为：{65,1,2,4,5} <class 'set'>
+
+s4 = set('Python');
+print(s4,type(s4));
+#结果为：{'p','n','y','o','h','t'} <class 'set'>
+#集合中的元素是无序的
+
+s5 = set({12,4,34,55,66,44,4});
+print(s5,type(s5));
+#结果为：{34,66,4,55,12,44} <class 'set'>
+
+#定义一个空集合
+s6 = {};
+print(type(s6));
+#结果为：<class 'dict'>
+#定义空集合不能直接用{}要用set()
+s7 = set()
+print(type(s7));
+#结果为：<class 'set'>
+```
