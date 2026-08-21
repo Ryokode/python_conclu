@@ -447,6 +447,8 @@ print(d);
 ## 元组
 ### 元组
 - Python内置数据结构之一，是一个不可变序列
+![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260821133330680.png)
+
 #### 不可变序列与可变序列
 - 不可变序列：字符串、元组
 	- 不可变序列没有增删改的操作
