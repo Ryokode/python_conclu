@@ -426,3 +426,22 @@ for item in scores:    #item获取的是字典中的键，[]或get()方法来获
  - 字典中的key必须是不可变对象，例如列表是可变对象，则列表不可做为字典的key
  - 字典也可以根据需要动态的伸缩
  - 字典会浪费较大的内存，是一种空间换时间的数据结构
+
+### 字典生成式
+![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260821131704838.png)
+#### 内置函数zip()
+- 用于将可迭代的对象作为参数，将对象中对应的元素打包成一个元组，然后返回这些元组组成的列表
+#### 字典生成式
+![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260821131916494.png)
+e.g:
+```python
+items = ['Fruits','Books','Others'];
+prices = [96,78,85];
+
+d = {item.upper():price for item,price in zip(items,prices)};
+print(d);
+#结果为：{'FRUITS':96,'BOOKS':78,'OTHERS':85}
+#zip()当可迭代对象列表内元素个数不同时会以元素小的那个为基准
+```
+
+## 元组
