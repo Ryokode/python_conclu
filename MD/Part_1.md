@@ -1317,6 +1317,7 @@ Student.info(stu);
 #类名.方法名(类的对象)-->实际上就是方法定义处的self
 ```
 - 意义：有了实例，就可以调用类中的内容
+
 ![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260822153511928.png)
 ### 类属性、类方法、静态方法的使用方式
 #### 类属性、类方法、静态方法
