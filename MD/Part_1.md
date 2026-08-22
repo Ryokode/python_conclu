@@ -1436,3 +1436,82 @@ print(stu1._Student__age);
 #在类的外部可以通过_Student__age进行访问
 ```
 #### 继承
+- 语法格式
+```python
+class 子类类名(父类1,父类2...):
+	pass
+```
+- 如果一个类没有继承任何类，则默认继承object
+- Python支持多继承
+- 定义子类时，必须在其构造函数中调用父类的构造函数
+```python
+class Person(object):
+	def __init__(self,name,age):
+		self.name = name;
+		self.age = age;
+	def info(self):
+		print('姓名：{0},年龄：{1}'.format(self.name,self.age));
+
+#定义子类
+class Student(Person):
+	def __init__(self,name,age,score):
+		super().__init__(name,age);#用super()去调用父类的name,age
+		self.score = score;
+
+stu = Student('Jack',20);
+stu.info()
+
+#多继承
+class A(object):
+	pass
+
+class B(object):
+	pass
+
+class C(A,B):
+	pass
+```
+#### 方法重写
+- 如果子类对继承自父类的某个属性或方法不满意，可以在子类中对其（方法体）进行重新编写
+- 子类重写后的方法可以通过super().xxx()调用父类中被重写的方法
+```python
+class Person(object):
+	def __init__(self,name,age):
+		self.name = name;
+		self.age = age;
+	def info(self):
+		print('姓名：{0},年龄：{1}'.format(self.name,self.age));
+
+#定义子类
+class Student(Person):
+	def __init__(self,name,age,score):
+		super().__init__(name,age);#用super()去调用父类的name,age
+		self.score = score;
+	def info(self):    #方法重写
+		super().info();    #调用父类中被重写过的方法
+		print('学号：{0}'.format(self.score));
+
+stu = Student('Jack',20,'1001');
+stu.info()
+```
+#### object类
+ - object类是所有类的父类，因此所有类都有object类的属性和方法
+ - 内置函数dir()可以查看指定对象所有的属性
+ - object有一个__str__()方法，用于返回一个对于”对象的描述“，对应于内置函数str()经常用于print()方法，帮我们查看对象的信息，所以我们经常会对__str__()进行重写
+ ```python
+ class Person(object):
+	def __init__(self,name,age):
+		self.name = name;
+		self.age = age;
+	def info(self):
+		print('姓名：{0},年龄：{1}'.format(self.name,self.age));
+	def __str__(self):
+		return '姓名：{0},年龄：{1}'.format(self.name,self.age);
+
+o = object();
+p = Person('Jack',20);
+print(dir(o));
+print(dir(p));
+print(p);
+ ```
+
