@@ -1217,3 +1217,26 @@ finally:
 	print('无论是否产生异常，总会被执行的代码')'
 print('程序结束');
 ```
+#### Python常见的异常类型
+
+| 异常类型              | 描述              |
+| ----------------- | --------------- |
+| ZeroDivisionError | 除（或取模）零（所有数据类型） |
+| IndexError        | 序列中没有此索引（index） |
+| KeyError          | 映射中没有这个键        |
+| NameError         | 未声明/初始化对象（没有属性） |
+| SyntaxError       | Python语法错误      |
+| ValueError        | 传入无效的参数         |
+#### traceback模块
+- 使用traceback模块打印异常信息
+![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260822144219355.png)
+```python
+import traceback
+try:
+	print('---------');
+	num = 10 / 0;
+except:
+	traceback.print_exec();
+```
+
+## 类与对象
