@@ -1097,3 +1097,71 @@ for i in range(1,7):
 ```
 
 ## Bug与异常
+### Bug的常见类型
+#### 粗心导致的语法错误SyntaxError
+```python
+age = input('请输入你的年龄');#input接收的内容都为str类型
+print(type(age));
+if age >= 18:
+	print('成年人');
+#TypeError
+#正确如下
+age = input('请输入你的年龄');#input接收的内容都为str类型
+print(type(age));
+if int(age) >= 18:
+	print('成年人');
+```
+- 漏了**末尾的冒号**，如if语句，循环语句，else子句等
+- **缩进错误**，该缩进的没缩进，不该缩进的瞎缩进
+- 把英文符号写成中文符号
+- 字符串拼接的时候，把**字符串和数字**拼在一起
+- 没有**定义变量**，比如while的循环条件变量
+- "\=="比较运算符和"="赋值运算符的混用等
+#### 知识点不熟练导致的错误
+- 索引越界问题IndexError
+```python
+lst = [11,22,33,44];
+print(lst[4]);
+#IndexError
+
+#正确如下
+lst = [11,22,33,44];
+print(lst[3]);
+```
+- append()方法的使用掌握不熟练
+```python
+lst = [];
+lst = append('A','B','C');
+print(lst);
+#NameError: name 'append' is not defined
+
+#正确如下
+lst = [];
+lst.append('A');
+lst.append('B');
+lst.append('C');
+print(lst);
+```
+#### 思路不清导致的问题解决方案
+- 使用print()函数
+- 使用#暂时注释部分代码
+##### 题目要求
+- 豆瓣电影Top250排行，使用列表存储电影信息，要求输入名字在屏幕上显示xxx出演了哪部电影
+```python
+lst = [{'rating':[9.7,50],'id':'1292052','type':['犯罪','剧情'],'title':'肖申克的救赎','actor':['蒂姆·罗宾斯','摩根·弗里曼']},{'rating':[9.6,50],'id':'1291546','type':['剧情','爱情','同性'],'title':'霸王别姬','actor':['张国荣','张丰毅','巩俐','葛优']},{'rating':[9.6,50],'id':'1296141','type':['犯罪','剧情','悬疑'],'title':'证方控人','actor':['泰隆·鲍华','玛琳·黛德丽']}];
+
+name = input('请输入你要查询的演员');
+for item in lst:
+	for movie in item:
+		actors = movie['actor'];
+		if name in actors:
+			print(name + '出演了:' + movie);
+
+#正确如下
+name = input('请输入你要查询的演员');
+for item in lst:
+	act_lst = item['actor'];
+	for actor in act_lst:
+		if actor in act_lst:
+			print(name + '出演了:' + item['title']);
+```
