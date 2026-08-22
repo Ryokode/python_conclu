@@ -1403,6 +1403,7 @@ stu2.show1();#stu2并没有绑定show1方法
 	- 在Python中没有专门的修饰符用于属性的私有，如果该属性不希望在类对象外部被访问，前边使用两个"\_"，即"\_\_"
 - 继承：提高代码的复用性
 - 多态：提高程序的可扩展性和可维护性
+#### 封装
 ```python
 class Car:
 	def __init__(self,brand):
@@ -1434,3 +1435,4 @@ print(stu1.__age);
 print(stu1._Student__age);
 #在类的外部可以通过_Student__age进行访问
 ```
+#### 继承
