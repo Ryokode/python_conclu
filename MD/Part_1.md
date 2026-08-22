@@ -1356,4 +1356,41 @@ Student.cm();
 ```python
 Student.sm();
 ```
-### 
+### 动态绑定属性和方法
+- Python是动态语言，在创建对象后，可以动态地绑定属性和方法
+```python
+class Student:   
+	def __init__(self,name,age):    
+		self.name = name;
+		self.age = age;
+	#实例方法
+	def eat(self):
+		print(self.name + '在吃饭');
+
+stu1 = Student('张三',20);
+stu2 = Student('李四',30);
+print(id(stu1));
+print(id(stu2));
+```
+![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260822160622252.png)
+```python
+#动态绑定性别属性
+stu1.gender = '女';
+print(stu1.gender);
+#结果为：女
+print(stu2.gender);
+#AttributeError: 'Student' object has no attribute 'gender'
+```
+![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260822160953570.png)
+```python
+#动态绑定方法
+def show2():
+	print('定义在类之外的，称函数');
+
+stu1.show1 = show2;
+stu1.show1();
+#结果为：定义在类之外的，称函数
+stu2.show1();#stu2并没有绑定show1方法
+#AttributeError: 'Student' object has no attribute 'show1'
+#在 Python 中，`stu1.show1 = show2` 这行代码的含义是将一个名为 `show2` 的对象（通常是一个函数或方法）赋值给 `stu1` 对象的 `show1` 属性。这里的 `stu1` 通常是某个类的实例，而 `show`1 则是某个已经定义好的函数或方法。
+```
