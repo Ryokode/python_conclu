@@ -1240,3 +1240,120 @@ except:
 ```
 
 ## 类与对象
+### 类与对象
+#### 类
+- 类别，分门别类
+- 类是多个类似事物组成的群体的统称，能够帮助我们快速理解和判断事物的性质
+#### 数据类型
+- 不同的数据类型属于不同的类
+- 使用内置函数查看数据类型type()
+#### 对象
+- 100、99、520都是int类之下包含的相似的不同个例，这个个例专业术语称为实力或对象
+
+### 定义Python中的类
+#### 创建类的语法
+```python
+class Student:
+	pass
+```
+#### 类的组成
+- 类属性
+- 实例方法
+- 静态方法
+- 类方法
+e.g:
+```python
+#在类之外定义的称为函数，在类之内定义的称为方法
+class Student:
+	native_place = '吉林';    #直接写在类里的变量，称为类属性
+	def __init__(self,name,age):    
+		self.name = name;#self.name称为实例属性，进行一个赋值的操作，将局部变量的name的值赋给实例属性
+		self.age = age;
+	#实例方法
+	def info(self):
+		print('我的名字叫：',self.name,'年龄是：',self.age);
+	#类方法要写cls
+	@classmethod
+	def cm(cls):
+		print('类方法');
+	#静态方法，在静态方法中不允许写self
+	@staticmethod
+	def sm():
+		print('静态方法');
+```
+
+![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260822152056338.png)
+### 对象的创建
+- 对象的创建又称为类的实例化
+- 语法：
+	- 实例名=类名()
+
+e.g:
+```python
+class Student:
+	native_place = '吉林';    #直接写在类里的变量，称为类属性
+	def __init__(self,name,age):    
+		self.name = name;#self.name称为实例属性，进行一个赋值的操作，将局部变量的name的值赋给实例属性
+		self.age = age;
+	#实例方法
+	def info(self):
+		print('我的名字叫：',self.name,'年龄是：',self.age);
+	#类方法要写cls
+	@classmethod
+	def cm(cls):
+		print('类方法');
+	#静态方法，在静态方法中不允许写self
+	@staticmethod
+	def sm():
+		print('静态方法');
+
+stu = Student('Jack',20);
+print(stu.name);#实例属性
+print(stu.age);#实例属性
+
+stu.info();#实例方法
+Student.info(stu);
+#这两个代码功能相同，都是调用Student类中的info方法
+#类名.方法名(类的对象)-->实际上就是方法定义处的self
+```
+- 意义：有了实例，就可以调用类中的内容
+![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260822153511928.png)
+### 类属性、类方法、静态方法的使用方式
+#### 类属性、类方法、静态方法
+- 类属性：类中方法外的变量称为类属性，被该类的所有对象所共享
+- 类方法：使用@classmethod修饰的方法，使用类名直接访问的方法
+- 静态方法：使用@staticmethod修饰的方法，使用类名直接访问的方法
+#### 类属性的使用方式
+```python
+class Student:
+	native_place = '吉林';    #直接写在类里的变量，称为类属性
+	def __init__(self,name,age):    
+		self.name = name;#self.name称为实例属性，进行一个赋值的操作，将局部变量的name的值赋给实例属性
+		self.age = age;
+	#实例方法
+	def info(self):
+		print('我的名字叫：',self.name,'年龄是：',self.age);
+	#类方法要写cls
+	@classmethod
+	def cm(cls):
+		print('类方法');
+	#静态方法，在静态方法中不允许写self
+	@staticmethod
+	def sm():
+		print('静态方法');
+
+stu1 = Student('张三',20);
+stu2 = Student('李四',30);
+print(stu1.native_palece);
+print(stu2.native_palece);
+#结果都为：吉林
+```
+#### 类方法的使用方式
+```python
+Student.cm();
+```
+#### 静态方法的使用方式
+```python
+Student.sm();
+```
+### 
