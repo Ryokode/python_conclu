@@ -1095,3 +1095,5 @@ print(fib(6));
 for i in range(1,7):
 	print(fib(i));
 ```
+
+## Bug与异常
