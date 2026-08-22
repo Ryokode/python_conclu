@@ -965,3 +965,27 @@ print(byte.decode(encoding='UTF-8'));#解码
 #UnicodeDecodeError:'utf-8' codec can't decode byte 0xcc in position 0: invalod continuation byte
 #编解码的格式都要一样
 ```
+
+## 函数
+### 函数的创建与调用
+
+![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260822122905760.png)
+```python
+def calc(a,b):
+	c = a + b;
+	return c;
+
+result = calc(10,20);
+print(result);
+```
+
+### 函数的参数传递
+- 位置实参
+	- 根据形参对应的位置进行实参传递
+![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260822123335898.png)
+- 关键字实参
+	- 根据形参名称进行实参传递
+![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260822123414820.png)
+### 函数参数传递的内存分析
+- 函数调用的参数传递内存分析图
+![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260822123729638.png)
