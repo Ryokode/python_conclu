@@ -982,9 +982,11 @@ print(result);
 ### 函数的参数传递
 - 位置实参
 	- 根据形参对应的位置进行实参传递
+
 ![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260822123335898.png)
 - 关键字实参
 	- 根据形参名称进行实参传递
+
 ![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260822123414820.png)
 ### 函数参数传递的内存分析
 - 函数调用的参数传递内存分析图
