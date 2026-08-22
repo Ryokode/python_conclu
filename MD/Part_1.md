@@ -1545,3 +1545,98 @@ fun(Person());
 	- 方法重写
 	- 父类引用指向子类对象
 - 动态语言的多态崇尚”鸭子类型“，当你看到一只鸟走起来像鸭子、游泳起来像鸭子，那么这只鸟就可以被称做鸭子。在鸭子类型中，**不需要关心对象是什么类型**，到底是不是鸭子，**只关心对象的行为**
+### 特殊属性和特殊方法
+
+|      | 名称         | 描述                                    |
+| ---- | ---------- | ------------------------------------- |
+| 特殊属性 | \_\_dict__ | 获取类对象或实例对象所绑定的所有属性和方法的字典              |
+| 特殊方法 | \_\_len__  | 通过重写\_\_len__方法，让内置函数len()的参数可以是自定义类型 |
+| 特殊方法 | \_\_add__  | 通过重写\_\_add__方法，可使用自定义对象具有"+"功能       |
+| 特殊方法 | \_\_new__  | 用于创建对象                                |
+| 特殊方法 | \_\_init__ | 对创建的对象进行初始化                           |
+
+#### 特殊属性
+```python
+class A(object):
+	pass
+
+class B(object):
+	pass
+
+class C(A,B):
+	def __init__(self,name,age):
+		self.name = name;
+		self.age = age;
+
+#创建C类的对象
+x = C('Jack',20);#x是C类型的一个实例对象
+print(x.__dict__);#实例对象的属性字典
+#结果为：{'name':'Jack','age':20}
+print(C.__dict__);
+#结果为：{'__module__':'__main__','__init__':<fuction C.__init__ at 0x000001C756C53040>,'__doc__':None}
+print(x.__class__);#<class '__main__.C'> 输出了对象所属的类
+#结果为：<class '__main__.C'>
+print(C.__bases__);#输出C类的父类的元组
+#结果为：(<class '__main__,A'>,<class '__main__.B'>)
+print(C.__base__);#输出的是C类继承最前面的父类
+#结果为：<class '__main__,A'>
+print(C.__mro__);#输出的是类的层次结构
+#结果为：(<class '__main__.C'>,<class '__main__,A'>,<class '__main__.B'>,<class 'object'>)
+print(A.__subclasses__);#输出A的子类
+#结果为：<class '__main__.C'>
+```
+#### 特殊方法
+```python
+#__add__()
+a= 20;
+b = 100;
+c = a + b;          #两个整数类型的对象相加操作
+#实际上是调用了a的__add__()方法
+d = a.__add__(b);
+print(c);
+print(d);
+#两个结果都是120
+
+class Student:
+	def __init__(self,name):
+		self.name = name;
+
+stu1 = Student('张三');
+stu2 = Student('李四');
+s = stu1 + stu2;
+print(s);
+#TypeError: unsupported operand type(s) for +: 'Student' and 'Student'
+
+class Student:
+	def __init__(self,name):
+		self.name = name;
+	def __add__(self,other):
+		return self.name + other.name;
+
+stu1 = Student('张三');
+stu2 = Student('李四');
+s = stu1 + stu2;    #实现了两个对象的加法运算（因为在Student类中编写了__add__()特殊方法）
+print(s);
+#结果为：张三李四
+s = stu1.__add__(stu2);
+print(s);
+#结果为：张三李四
+
+#__len__()
+lst = [11,22,33,44];
+print(len(lst));
+print(lst.__len__());
+#结果都是4
+print(len(stu1));
+#TypeError: object of type 'Student' has no len()
+class Student:
+	def __init__(self,name):
+		self.name = name;
+	def __add__(self,other):
+		return self.name + other.name;
+	def __len__(self.name):
+		return len(self.name);
+print(len(stu1));
+#2
+```
+##### \_\_new__与__init__演示创建对象的过程
