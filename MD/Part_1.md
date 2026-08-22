@@ -1184,3 +1184,36 @@ except ValueError:
 except BaseException as e:
 	print(e);
 ```
+#### try...except...else结构
+- 如果try块中没有抛出异常，则执行else块，如果try中抛出异常，则执行except块
+```python
+try:
+	n1 = int(input('请输入一个整数:'));
+	n2 = int(input('请输入另一个整数:'));
+	result = n1 / n2;
+	print('结果为：',result);
+except BaseException as e:    #给错误起个别名e
+	print('出错了');
+	print(e);    #把报错对应的代码打印出来
+else:
+	print('结果为：',result);
+```
+#### try...except...else...finally结构
+- finally块无论是否发生异常都会被执行，能常用来释放try块中申请的资源
+
+![image.png](https://raw.githubusercontent.com/Ryokode/PicGo/main/20260822143456482.png)
+```python
+try:
+	n1 = int(input('请输入一个整数:'));
+	n2 = int(input('请输入另一个整数:'));
+	result = n1 / n2;
+	print('结果为：',result);
+except BaseException as e:    #给错误起个别名e
+	print('出错了');
+	print(e);    #把报错对应的代码打印出来
+else:
+	print('结果为：',result);
+finally:
+	print('无论是否产生异常，总会被执行的代码')'
+print('程序结束');
+```
